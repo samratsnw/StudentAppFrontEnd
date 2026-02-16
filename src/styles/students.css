@@ -1,0 +1,209 @@
+/* Page base */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 16px;
+}
+
+/* Containers */
+.search-container {
+  margin-bottom: 12px;
+}
+
+.create-button-container {
+  margin-bottom: 16px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="date"],
+select {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-right: 8px;
+  min-width: 180px;
+}
+
+/* Buttons — base */
+button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-right: 6px;
+}
+
+/* Search / Reset */
+.search-container button:first-of-type {
+  background: #2563eb;
+  color: white;
+}
+
+.search-container button:first-of-type:hover {
+  background: #1e4fd8;
+}
+
+.search-container button:last-of-type {
+  background: #6b7280;
+  color: white;
+}
+
+.search-container button:last-of-type:hover {
+  background: #555;
+}
+
+/* New Student button */
+.create-button-container button {
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+}
+
+.create-button-container button:hover {
+  background: #12803a;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table header */
+thead {
+  background: #1f2937;
+  color: white;
+}
+
+th {
+  text-align: left;
+  padding: 12px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* Table cells */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* Hover row */
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Action buttons in table */
+td button:first-child {
+  background: #f59e0b;
+  color: white;
+}
+
+td button:first-child:hover {
+  background: #d97706;
+}
+
+td button:last-child {
+  background: #dc2626;
+  color: white;
+}
+
+td button:last-child:hover {
+  background: #b91c1c;
+}
+
+/* ===== FORM STYLING ===== */
+
+form {
+  background: white;
+  padding: 22px;
+  width: 380px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  border-radius: 10px;
+}
+
+form input,
+form select {
+  display: block;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* checkbox row */
+form label input[type="checkbox"] {
+  margin-left: 8px;
+  transform: scale(1.1);
+}
+
+/* Save button */
+form button[type="submit"] {
+  background: #2563eb;
+  color: white;
+  width: 100%;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+form button[type="submit"]:hover {
+  background: #1e4fd8;
+}
+
+.actions-header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-create-btn {
+  background: #16a34a;
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.header-create-btn:hover {
+  background: #12803a;
+}
+
+/* Top bar layout */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* Right side create button */
+.top-create-btn {
+  background: #16a34a;
+  color: white;
+  font-weight: 600;
+  padding: 8px 14px;
+  margin-right: 250px;
+  border-radius: 8px;
+}
+
+.top-create-btn:hover {
+  background: #12803a;
+}
