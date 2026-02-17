@@ -60,13 +60,17 @@ export default function StudentList() {
   }
 
   const handleSearch = () => {
-    const filtered = allStudents.filter(s =>
-      s.name.toLowerCase().includes(search.toLowerCase())
-    )
-    setStudents(filtered)
-  }
+  const searchValue = search.toLowerCase().trim()
 
-  const handleReset = () => {
+  const filtered = allStudents.filter(s =>
+    s.firstName.toLowerCase().includes(searchValue) ||
+    s.lastName.toLowerCase().includes(searchValue)
+  )
+
+  setStudents(filtered)
+}
+
+   const handleReset = () => {
     setStudents(allStudents)
     setSearch("")
   }
@@ -107,7 +111,8 @@ export default function StudentList() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>FirstName</th>
+            <th>LastName</th>
             <th>Department</th>
             <th>Gender</th>
             <th>Birth Date</th>
@@ -120,7 +125,8 @@ export default function StudentList() {
           {students.map(s => (
             <tr key={s.studentID}>
               <td>{s.studentID}</td>
-              <td>{s.name}</td>
+              <td>{s.firstName}</td>
+              <td>{s.lastName}</td>
               <td>{s.departmentName}</td>
               <td>{s.gender}</td>
               <td>{s.dob ? formatDate(s.dob) : ""}</td>

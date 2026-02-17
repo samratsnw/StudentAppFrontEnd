@@ -1,6 +1,7 @@
 export interface StudentRead {
   studentID: number
-  name: string
+  firstName: string
+  lastName: string
   dob: string
   gender: string
   isActive: boolean

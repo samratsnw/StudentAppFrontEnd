@@ -16,7 +16,8 @@ export default function StudentForm({ id, onClose, onSaved }: Props) {
   const [errors, setErrors] = useState<Record<string, string>>({})
 
   const [form, setForm] = useState<StudentUpsert>({
-    name: "",
+    firstName: "",
+    lastName: "",
     dob: "",
     gender: "",
     isActive: true,
@@ -27,7 +28,7 @@ export default function StudentForm({ id, onClose, onSaved }: Props) {
   useEffect(() => {
     let mounted = true
     getDepartments().then(r => mounted && setDepartments(r.data))
-    return () => {
+     return () => {
       mounted = false
     }
   }, [])
@@ -42,7 +43,8 @@ export default function StudentForm({ id, onClose, onSaved }: Props) {
       const s = r.data
       setForm({
         studentID: s.studentID,
-        name: s.name,
+        firstName: s.firstName,
+        lastName: s.lastName,
         dob: s.dob.substring(0, 10),
         gender: s.gender,
         isActive: s.isActive,
@@ -80,7 +82,10 @@ export default function StudentForm({ id, onClose, onSaved }: Props) {
 
     const newErrors: Record<string, string> = {}
 
-    if (!form.name.trim()) newErrors.name = "Name is required"
+    if (!form.firstName.trim())
+        newErrors.firstName = "First name is required"
+    if (!form.lastName.trim())
+        newErrors.lastName = "Last name is required"
     if (!form.dob) newErrors.dob = "Date of birth is required"
     if (!form.gender) newErrors.gender = "Gender is required"
     if (form.departmentId === 0)
@@ -112,16 +117,32 @@ export default function StudentForm({ id, onClose, onSaved }: Props) {
 
         {/* IMPORTANT: noValidate disables browser tooltip */}
         <form className="student-form" onSubmit={handleSubmit} noValidate>
-          {/* Name */}
-          <label>
-            Name <span className="req">*</span>
-          </label>
-          <input
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-          />
-          {errors.name && <div className="field-error">{errors.name}</div>}
+         {/* First Name */}
+<label>
+  First Name <span className="req">*</span>
+</label>
+<input
+  name="firstName"
+  value={form.firstName}
+  onChange={handleChange}
+/>
+{errors.firstName && (
+  <div className="field-error">{errors.firstName}</div>
+)}
+
+{/* Last Name */}
+<label>
+  Last Name <span className="req">*</span>
+</label>
+<input
+  name="lastName"
+  value={form.lastName}
+  onChange={handleChange}
+/>
+{errors.lastName && (
+  <div className="field-error">{errors.lastName}</div>
+)}
+
 
           {/* DOB */}
           <label>
